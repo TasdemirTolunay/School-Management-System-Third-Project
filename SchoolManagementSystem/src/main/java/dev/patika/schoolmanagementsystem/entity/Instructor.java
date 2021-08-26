@@ -8,7 +8,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//Entity class
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,16 +15,13 @@ import java.util.List;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Instructor {
 
-    //This class have Primary key
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    //Variables
     private String instructorName;
     private String instructorPhoneNumber;
 
-    //Relations with other classes
     @ManyToOne
     private Address address;
 
