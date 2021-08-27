@@ -13,8 +13,4 @@ public interface AddressRepository extends CrudRepository<Address, Integer> {
     List<Address> findByCity(String cityName);
     List<Address> findByPlateCode(String pC);
 
-    void deleteByCountry(String countryName);
-    void deleteByCity(String cityName);
-    void deleteByPlateCode(String pC);
-
 }
