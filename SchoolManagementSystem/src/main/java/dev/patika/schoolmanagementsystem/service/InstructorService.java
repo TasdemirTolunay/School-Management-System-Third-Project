@@ -1,8 +1,6 @@
 package dev.patika.schoolmanagementsystem.service;
 
-import dev.patika.schoolmanagementsystem.entity.Address;
-import dev.patika.schoolmanagementsystem.entity.Course;
-import dev.patika.schoolmanagementsystem.entity.Instructor;
+import dev.patika.schoolmanagementsystem.entity.*;
 import dev.patika.schoolmanagementsystem.repository.AddressRepository;
 import dev.patika.schoolmanagementsystem.repository.InstructorRepository;
 import lombok.RequiredArgsConstructor;
@@ -39,6 +37,20 @@ public class InstructorService implements ServiceRepository<Instructor> {
     @Override
     @Transactional
     public Instructor save(Instructor instructor) {
+
+        return instructorRepository.save(instructor);
+
+    }
+
+    @Transactional
+    public Instructor savePermanentInstructor(PermanentInstructor instructor){
+
+        return instructorRepository.save(instructor);
+
+    }
+
+    @Transactional
+    public Instructor saveVisitingInstructor(VisitingResearcher instructor){
 
         return instructorRepository.save(instructor);
 
