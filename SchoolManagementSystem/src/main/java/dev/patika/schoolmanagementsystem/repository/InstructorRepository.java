@@ -20,13 +20,13 @@ public interface InstructorRepository extends CrudRepository<Instructor, Integer
     @Query(nativeQuery = true, value = "select TOP 3 from instructor order by fixed_salary")
     List<Instructor> findFirst3MinFixedSalary();
 
-    @Query(nativeQuery = true, value = "select FIRST 3 from instructor order by fixed_salary")
+    @Query(nativeQuery = true, value = "select TOP 3 from instructor order by fixed_salary desc")
     List<Instructor> findFirst3MaxFixedSalary();
 
     @Query(nativeQuery = true, value = "select TOP 3 from instructor order by hourly_salary")
     List<Instructor> findFirst3MinHourlySalary();
 
-    @Query(nativeQuery = true, value = "select FIRST 3 from instructor order by hourly_salary")
+    @Query(nativeQuery = true, value = "select TOP 3 from instructor order by hourly_salary desc")
     List<Instructor> findFirst3MaxHourlySalary();
 
 }
