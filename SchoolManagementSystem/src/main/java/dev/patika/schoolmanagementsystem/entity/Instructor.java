@@ -16,11 +16,13 @@ import java.util.List;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Instructor {
 
-    @ApiModelProperty(hidden = true)
+    //This class have Primary key
+    @ApiModelProperty(hidden = true) // Swagger Configration
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    //Variables
     private String instructorName;
     private String instructorPhoneNumber;
 
@@ -29,6 +31,7 @@ public class Instructor {
         this.instructorPhoneNumber = instructorPhoneNumber;
     }
 
+    //Relations with other classes
     @ApiModelProperty(hidden = true)
     @ManyToOne
     private Address address;

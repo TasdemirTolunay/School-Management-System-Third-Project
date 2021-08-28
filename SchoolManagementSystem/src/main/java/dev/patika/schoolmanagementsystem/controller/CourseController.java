@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
+//Controller class
 @RestController
 @RequestMapping("/course")
 public class CourseController {
@@ -22,6 +22,7 @@ public class CourseController {
         this.courseService = courseService;
     }
 
+    //Shows the course list
     @GetMapping("/list")
     public ResponseEntity<List<Course>> findAllCourse(){
 
@@ -29,6 +30,7 @@ public class CourseController {
 
     }
 
+    //Shows the course of the entered ID
     @GetMapping("/{id}")
     public ResponseEntity<Course> findCourseById(@PathVariable int id){
 
@@ -36,6 +38,7 @@ public class CourseController {
 
     }
 
+    //Shows the course of the entered courseName
     @GetMapping("/courseName/{courseName}")
     public ResponseEntity<List<Course>> findCourseByName(@PathVariable String courseName){
 
@@ -43,6 +46,7 @@ public class CourseController {
 
     }
 
+    //Shows the course of the entered courseName
     @GetMapping("/name")
     public ResponseEntity<List<Course>> findCourseByRequestName(@RequestParam String courseName){
 
@@ -50,6 +54,7 @@ public class CourseController {
 
     }
 
+    // Shows the courses containing the entered name.
     @GetMapping("/containing/{courseName}")
     public ResponseEntity<List<Course>> findCourseByNameContaining(@PathVariable String courseName){
 
@@ -57,6 +62,7 @@ public class CourseController {
 
     }
 
+    // Shows the courses containing the entered name.
     @GetMapping("/containing")
     public ResponseEntity<List<Course>> findCourseByRequestNameContaining(@RequestParam String courseName){
 
@@ -64,6 +70,7 @@ public class CourseController {
 
     }
 
+    //Shows students registered to the course with the entered ID
     @GetMapping("/students/{id}")
     public ResponseEntity<List<Student>> findCourseStudents(@PathVariable int id){
 
@@ -71,6 +78,7 @@ public class CourseController {
 
     }
 
+    //Shows instructors registered to the course with the entered ID
     @GetMapping("/instructor/{id}")
     public ResponseEntity<Instructor> findCourseInstructor(@PathVariable int id){
 
@@ -78,6 +86,7 @@ public class CourseController {
 
     }
 
+    //New course information is created
     @PostMapping("/save")
     public ResponseEntity<Course> saveCourse(@RequestBody Course course){
 
@@ -85,6 +94,7 @@ public class CourseController {
 
     }
 
+    //Course information update of the entered ID
     @PutMapping("/update/{id}")
     public ResponseEntity<Course> updateCourse(@RequestBody Course course, @PathVariable int id){
 
@@ -92,6 +102,7 @@ public class CourseController {
 
     }
 
+    //Assigns the student to a course
     @PutMapping("/set/student{courseId}/{studentId}")
     public ResponseEntity<String> setStudentOfCourse(@PathVariable int courseId, @PathVariable int studentId){
 
@@ -99,6 +110,8 @@ public class CourseController {
         return new ResponseEntity<>("Set Updated...", HttpStatus.ACCEPTED);
 
     }
+
+    //Assigns the instructor to a course
     @PutMapping("/set/instructor{courseId}/{instructorId}")
     public ResponseEntity<String> setInstructorOfCourse(@PathVariable int courseId, @PathVariable int instructorId){
 
@@ -108,6 +121,7 @@ public class CourseController {
     }
 
 
+    //Delete course information with id
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteCourseById(@PathVariable int id){
 
@@ -115,6 +129,7 @@ public class CourseController {
 
     }
 
+    //Delete course information
     @DeleteMapping("/delete")
     public ResponseEntity<String> deleteCourseByObject(@RequestBody Course course){
 
@@ -122,6 +137,7 @@ public class CourseController {
 
     }
 
+    //Delete course information with name
     @DeleteMapping("/deleteName/{courseName}")
     public ResponseEntity<String> deleteCourseByName(@PathVariable String courseName){
 

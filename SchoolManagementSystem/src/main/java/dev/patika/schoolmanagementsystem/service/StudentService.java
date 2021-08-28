@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+//This class contains methods of transaction on the address.
 @Service
 @RequiredArgsConstructor
 public class StudentService implements ServiceRepository<Student> {

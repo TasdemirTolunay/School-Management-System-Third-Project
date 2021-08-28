@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public interface AddressRepository extends CrudRepository<Address, Integer> {
 
+    // Derived queries
     List<Address> findByCountry(String countryName);
     List<Address> findByCity(String cityName);
     List<Address> findByPlateCode(String pC);

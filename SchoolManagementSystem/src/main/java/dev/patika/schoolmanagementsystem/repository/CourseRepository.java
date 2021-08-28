@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public interface CourseRepository extends CrudRepository<Course, Integer> {
 
+    // Derived queries
     List<Course> findByCourseName(String name);
     List<Course> findByCourseNameContaining(String name);
 

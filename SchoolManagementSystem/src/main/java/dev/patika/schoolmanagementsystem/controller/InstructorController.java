@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//Controller class
 @RestController
 @RequestMapping("/instructor")
 public class InstructorController {
@@ -20,6 +21,7 @@ public class InstructorController {
         this.instructorService = instructorService;
     }
 
+    //Shows the instructor list
     @GetMapping("/list")
     public ResponseEntity<List<Instructor>> findAllInstructor(){
 
@@ -27,6 +29,7 @@ public class InstructorController {
 
     }
 
+    //Shows the instructor of the entered ID
     @GetMapping("/{id}")
     public ResponseEntity<Instructor> findInstructorById(@PathVariable int id){
 
@@ -34,6 +37,7 @@ public class InstructorController {
 
     }
 
+    //Shows the instructor of the entered name.
     @GetMapping("/instructorName/{instructorName}")
     public ResponseEntity<List<Instructor>> findInstructorByName(@PathVariable String instructorName){
 
@@ -41,6 +45,7 @@ public class InstructorController {
 
     }
 
+    //Shows the instructor of the entered name.
     @GetMapping("/name")
     public ResponseEntity<List<Instructor>> findInstructorByRequestName(@RequestParam String instructorName){
 
@@ -48,6 +53,7 @@ public class InstructorController {
 
     }
 
+    // Shows the Instructor containing the entered name.
     @GetMapping("/containing/{instructorName}")
     public ResponseEntity<List<Instructor>> findInstructorByNameContaining(@PathVariable String instructorName){
 
@@ -55,6 +61,7 @@ public class InstructorController {
 
     }
 
+    // Shows the Instructor containing the entered name.
     @GetMapping("/containing")
     public ResponseEntity<List<Instructor>> findInstructorByRequestNameContaining(@RequestParam String instructorName){
 
@@ -62,6 +69,7 @@ public class InstructorController {
 
     }
 
+    //Shows courses registered to the instructor with the entered ID
     @GetMapping("/courses/{id}")
     public ResponseEntity<List<Course>> findInstructorCourses(@PathVariable int id){
 
@@ -69,6 +77,7 @@ public class InstructorController {
 
     }
 
+    //Shows address registered to the instructor with the entered ID
     @GetMapping("/address/{id}")
     public ResponseEntity<Address> findInstructorAddress(@PathVariable int id){
 
@@ -76,6 +85,7 @@ public class InstructorController {
 
     }
 
+    //Three PermanentInstructor with a minimum salary
     @GetMapping("/minfixedsalary")
     public ResponseEntity<List<Instructor>> first3MinFixedSalary(){
 
@@ -83,6 +93,7 @@ public class InstructorController {
 
     }
 
+    //Three PermanentInstructor with a maximum salary
     @GetMapping("/maxfixedsalary")
     public ResponseEntity<List<Instructor>> first3MaxFixedSalary(){
 
@@ -90,6 +101,7 @@ public class InstructorController {
 
     }
 
+    //Three VisitingResearcher with a minimum salary
     @GetMapping("/minhourlysalary")
     public ResponseEntity<List<Instructor>> first3MinHourlySalary(){
 
@@ -97,6 +109,8 @@ public class InstructorController {
 
     }
 
+
+    //Three VisitingResearcher with a maximum salary
     @GetMapping("/maxhourlysalary")
     public ResponseEntity<List<Instructor>> first3MaxHourlySalary(){
 
@@ -104,6 +118,7 @@ public class InstructorController {
 
     }
 
+    //New instructor information is created
     @PostMapping("/save")
     public ResponseEntity<Instructor> saveInstructor(@RequestBody Instructor instructor){
 
@@ -111,6 +126,7 @@ public class InstructorController {
 
     }
 
+    //New permanent instructor information is created
     @PostMapping("/save/permanent")
     public ResponseEntity<Instructor> permanentInstructorSave(@RequestBody PermanentInstructor instructor){
 
@@ -118,6 +134,7 @@ public class InstructorController {
 
     }
 
+    //New visiting instructor information is created
     @PostMapping("/save/visiting")
     public ResponseEntity<Instructor> visitingInstructorSave(@RequestBody VisitingResearcher instructor){
 
@@ -125,6 +142,7 @@ public class InstructorController {
 
     }
 
+    //Instructor information update of the entered ID
     @PutMapping("/update/{id}")
     public ResponseEntity<Instructor> updateInstructor(@RequestBody Instructor instructor, @PathVariable int id){
 
@@ -132,6 +150,7 @@ public class InstructorController {
 
     }
 
+    //Assigns the address to a instructor
     @PutMapping("/set/address/{instructorId}/{addressId}")
     public ResponseEntity<String> setAddressOfInstructor(@PathVariable int instructorId, @PathVariable int addressId){
 
@@ -140,6 +159,7 @@ public class InstructorController {
 
     }
 
+    //Delete instructor information with id
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteInstructorById(@PathVariable int id){
 
@@ -147,6 +167,7 @@ public class InstructorController {
 
     }
 
+    //Delete instructor information
     @DeleteMapping("/delete")
     public ResponseEntity<String> deleteInstructorByObject(@RequestBody Instructor instructor){
 
@@ -154,6 +175,7 @@ public class InstructorController {
 
     }
 
+    //Delete instructor information with name
     @DeleteMapping("/deleteName/{instructorName}")
     public ResponseEntity<String> deleteInstructorByName(@PathVariable String instructorName){
 

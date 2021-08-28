@@ -11,12 +11,14 @@ import java.util.List;
 @Repository
 public interface InstructorRepository extends CrudRepository<Instructor, Integer> {
 
+    // Derived queries
     List<Instructor> findByInstructorName(String name);
 
     List<Instructor> findByInstructorNameContaining(String name);
 
     void deleteByInstructorName(String name);
 
+    // Custom queries
     @Query(nativeQuery = true, value = "select TOP 3 * from instructor order by fixed_salary")
     List<Instructor> findFirst3MinFixedSalary();
 

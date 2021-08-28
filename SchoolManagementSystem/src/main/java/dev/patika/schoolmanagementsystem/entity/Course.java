@@ -17,11 +17,13 @@ import java.util.List;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Course {
 
-    @ApiModelProperty(hidden = true)
+    //This class have Primary key
+    @ApiModelProperty(hidden = true) // Swagger Configration
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    //Variables
     private String courseName;
     private String courseCode;
     private double courseCreditScore;
@@ -32,6 +34,7 @@ public class Course {
         this.courseCreditScore = courseCreditScore;
     }
 
+    //Relations with other classes
     @ApiModelProperty(hidden = true)
     @ManyToMany
     private List<Student> students = new ArrayList<>();

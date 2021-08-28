@@ -3,6 +3,7 @@ package dev.patika.schoolmanagementsystem.service;
 
 import java.util.List;
 
+// Interface for Service classes.
 public interface ServiceRepository<T> {
 
     List<T> findAll();

@@ -8,11 +8,10 @@ import dev.patika.schoolmanagementsystem.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
+
+// Test data class
 @Component
 @RequiredArgsConstructor
 public class Runner implements CommandLineRunner {

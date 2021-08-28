@@ -18,11 +18,13 @@ import java.util.List;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Address {
 
-    @ApiModelProperty(hidden = true)
+    //This class have Primary key
+    @ApiModelProperty(hidden = true) // Swagger Confıgration
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    //Variables
     private String country;
     private String city;
     private String plateCode;
@@ -33,6 +35,7 @@ public class Address {
         this.plateCode = plateCode;
     }
 
+    //Relations with other classes
     @ApiModelProperty(hidden = true)
     @OneToMany(mappedBy = "address")
     private List<Student> studentList = new ArrayList<>();

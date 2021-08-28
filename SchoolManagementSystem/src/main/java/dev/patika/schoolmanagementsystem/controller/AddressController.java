@@ -9,9 +9,9 @@ import dev.patika.schoolmanagementsystem.service.StudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
+//Controller class
 @RestController
 @RequestMapping("/address")
 public class AddressController {
@@ -24,6 +24,7 @@ public class AddressController {
         this.addressService = addressService;
     }
 
+    //Shows the address list
     @GetMapping("/list")
     public ResponseEntity<List<Address>> findAllAddress(){
 
@@ -31,6 +32,7 @@ public class AddressController {
 
     }
 
+    //Shows the address of the entered ID.
     @GetMapping("/{id}")
     public ResponseEntity<Address> findAddressById(@PathVariable int id){
 
@@ -38,18 +40,23 @@ public class AddressController {
 
     }
 
+    //Shows the address of the entered country.
     @GetMapping("/country/{country}")
     public ResponseEntity<List<Address>> findAddressByCountry(@PathVariable String country){
 
         return new ResponseEntity<>(addressService.findAddressByCountry(country), HttpStatus.OK);
 
     }
+
+    //Shows the address of the entered city.
     @GetMapping("/city/{city}")
     public ResponseEntity<List<Address>> findAddressByCity(@PathVariable String city){
 
         return new ResponseEntity<>(addressService.findAddressByCity(city), HttpStatus.OK);
 
     }
+
+    //Shows the address of the entered plateCode.
     @GetMapping("/plateCode/{plateCode}")
     public ResponseEntity<List<Address>> findAddressByPlateCode(@PathVariable String plateCode){
 
@@ -57,6 +64,7 @@ public class AddressController {
 
     }
 
+    //Shows students registered to the address with the entered ID
     @GetMapping("/students/{id}")
     public ResponseEntity<List<Student>> addressStudents(@PathVariable int id){
 
@@ -64,6 +72,7 @@ public class AddressController {
 
     }
 
+    //Shows instructors registered to the address with the entered ID
     @GetMapping("/instructors/{id}")
     public ResponseEntity<List<Instructor>> addressInstructors(@PathVariable int id){
 
@@ -71,6 +80,7 @@ public class AddressController {
 
     }
 
+    //New address information is created
     @PostMapping("/save")
     public ResponseEntity<Address> saveAddress(@RequestBody Address address){
 
@@ -78,6 +88,7 @@ public class AddressController {
 
     }
 
+    //Address information update of the entered ID
     @PutMapping("/update/{id}")
     public ResponseEntity<Address> updateAddress(@RequestBody Address address, @PathVariable int id){
 
@@ -85,6 +96,7 @@ public class AddressController {
 
     }
 
+    //Delete address information with id
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteAddressById(@PathVariable int id){
 
@@ -92,6 +104,7 @@ public class AddressController {
 
     }
 
+    //Delete address information
     @DeleteMapping("/delete")
     public ResponseEntity<String> deleteAddressByObject(@RequestBody Address address){
 
