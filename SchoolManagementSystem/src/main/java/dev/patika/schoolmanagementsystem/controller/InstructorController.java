@@ -34,7 +34,7 @@ public class InstructorController {
 
     }
 
-    @GetMapping("/{instructorName}")
+    @GetMapping("/instructorName/{instructorName}")
     public ResponseEntity<List<Instructor>> findInstructorByName(@PathVariable String instructorName){
 
         return new ResponseEntity<>(instructorService.findInstructorByName(instructorName), HttpStatus.OK);
@@ -132,7 +132,7 @@ public class InstructorController {
 
     }
 
-    @PutMapping("/set/{instructorId}/{addressId}")
+    @PutMapping("/set/address/{instructorId}/{addressId}")
     public ResponseEntity<String> setAddressOfInstructor(@PathVariable int instructorId, @PathVariable int addressId){
 
         instructorService.setAddressOfInstructor(instructorId,addressId);

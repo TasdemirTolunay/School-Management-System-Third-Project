@@ -36,7 +36,7 @@ public class StudentController {
 
     }
 
-    @GetMapping("/{studentName}")
+    @GetMapping("/studentName/{studentName}")
     public ResponseEntity<List<Student>> findStudentByName(@PathVariable String studentName){
 
         return new ResponseEntity<>(studentService.findStudentByName(studentName), HttpStatus.OK);
@@ -99,10 +99,10 @@ public class StudentController {
 
     }
 
-    @PutMapping("/set/{studentId}/{addressId}")
-    public ResponseEntity<String> setAddressOfStudent(@PathVariable int addressId, @PathVariable int studentId){
+    @PutMapping("/set/address/{studentId}/{addressId}}")
+    public ResponseEntity<String> setAddressOfStudent(@PathVariable int studentId, @PathVariable int addressId){
 
-        studentService.setAddressOfStudent(addressId,studentId);
+        studentService.setAddressOfStudent(studentId,addressId);
         return new ResponseEntity<>("Set Updated...", HttpStatus.ACCEPTED);
 
     }

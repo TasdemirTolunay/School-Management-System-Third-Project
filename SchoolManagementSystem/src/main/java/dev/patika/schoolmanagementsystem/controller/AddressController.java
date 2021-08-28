@@ -4,6 +4,8 @@ import dev.patika.schoolmanagementsystem.entity.Address;
 import dev.patika.schoolmanagementsystem.entity.Instructor;
 import dev.patika.schoolmanagementsystem.entity.Student;
 import dev.patika.schoolmanagementsystem.service.AddressService;
+import dev.patika.schoolmanagementsystem.service.InstructorService;
+import dev.patika.schoolmanagementsystem.service.StudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,8 @@ import java.util.List;
 public class AddressController {
 
     AddressService addressService;
+    InstructorService instructorService;
+    StudentService studentService;
 
     public AddressController(AddressService addressService) {
         this.addressService = addressService;
@@ -34,19 +38,19 @@ public class AddressController {
 
     }
 
-    @GetMapping("/{country}")
+    @GetMapping("/country/{country}")
     public ResponseEntity<List<Address>> findAddressByCountry(@PathVariable String country){
 
         return new ResponseEntity<>(addressService.findAddressByCountry(country), HttpStatus.OK);
 
     }
-    @GetMapping("/{city}")
+    @GetMapping("/city/{city}")
     public ResponseEntity<List<Address>> findAddressByCity(@PathVariable String city){
 
         return new ResponseEntity<>(addressService.findAddressByCity(city), HttpStatus.OK);
 
     }
-    @GetMapping("/{plateCode}")
+    @GetMapping("/plateCode/{plateCode}")
     public ResponseEntity<List<Address>> findAddressByPlateCode(@PathVariable String plateCode){
 
         return new ResponseEntity<>(addressService.findAddressByPlateCode(plateCode), HttpStatus.OK);

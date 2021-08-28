@@ -36,7 +36,7 @@ public class CourseController {
 
     }
 
-    @GetMapping("/{courseName}")
+    @GetMapping("/courseName/{courseName}")
     public ResponseEntity<List<Course>> findCourseByName(@PathVariable String courseName){
 
         return new ResponseEntity<>(courseService.findCourseByName(courseName), HttpStatus.OK);
@@ -92,14 +92,14 @@ public class CourseController {
 
     }
 
-    @PutMapping("/set/{courseId}/{studentId}")
+    @PutMapping("/set/student{courseId}/{studentId}")
     public ResponseEntity<String> setStudentOfCourse(@PathVariable int courseId, @PathVariable int studentId){
 
         courseService.setStudentOfCourse(courseId,studentId);
         return new ResponseEntity<>("Set Updated...", HttpStatus.ACCEPTED);
 
     }
-    @PutMapping("/set/{courseId}/{instructorId}")
+    @PutMapping("/set/instructor{courseId}/{instructorId}")
     public ResponseEntity<String> setInstructorOfCourse(@PathVariable int courseId, @PathVariable int instructorId){
 
         courseService.setInstructorOfCourse(courseId,instructorId);
