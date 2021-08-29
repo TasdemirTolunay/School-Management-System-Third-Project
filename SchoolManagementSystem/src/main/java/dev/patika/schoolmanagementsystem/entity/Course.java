@@ -1,5 +1,6 @@
 package dev.patika.schoolmanagementsystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import io.swagger.annotations.ApiModelProperty;
@@ -14,7 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Course {
 
     //This class have Primary key
@@ -35,10 +35,12 @@ public class Course {
     }
 
     //Relations with other classes
+    @JsonBackReference
     @ApiModelProperty(hidden = true)
     @ManyToMany
     private List<Student> students = new ArrayList<>();
 
+    @JsonBackReference
     @ApiModelProperty(hidden = true)
     @ManyToOne
     private Instructor instructor;
