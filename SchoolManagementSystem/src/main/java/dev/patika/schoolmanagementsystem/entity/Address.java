@@ -45,4 +45,5 @@ public class Address {
     @ApiModelProperty(hidden = true)
     @OneToMany(mappedBy = "address")
     private List<Instructor> instructorList = new ArrayList<>();
+
 }
