@@ -1,6 +1,7 @@
 ## Description
 
 ---
+- The third project of Gitti Gidiyor Java Spring Bootcamp by patika.
 - Database of a school management system has been created.
 - H2 is used as the database system.
 - The connection of the project with h2 is made using Spring Data Jpa.
@@ -59,7 +60,7 @@
 ![DollarToTl](SchoolManagementSystem/src/main/java/images/Dollartotl.jpg)
 
 
-# Üçüncü hafta ödevimizin son teslim zamanı :  29 Ağustos Pazar saat 23:00 
+## Third Project
 
 
 
