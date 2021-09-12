@@ -1,3 +1,31 @@
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#description">Description About The Project</a>
+      <ul>
+        <li><a href="#school-management-system-uml-diagram">School Management System Uml Diagram</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#mapping-operations-on-swagger">Mapping Operations On Swagger</a>
+      <ul>
+        <li><a href="#mapping-operations-on-the-student">Mapping Operations On The Student</a></li>
+        <li><a href="#mapping-operations-on-the-instructor">Mapping Operations On The Instructor</a></li>
+        <li><a href="#mapping-operations-on-the-course">Mapping Operations On The Course</a></li>
+        <li><a href="#mapping-operations-on-the-address">Mapping Operations On The Address</a></li>
+      </ul>
+    </li>
+    <li><a href="#accessing-another-endpoint-using-restTemplate">Accessing Another Endpoint Using RestTemplate</a>
+      <ul>
+        <li><a href="#accessor-endpoint-for-tlToDollar-operation">Accessor Endpoint For TlToDollar Operation</a></li>
+        <li><a href="#accessor-endpoint-for-dollarToTl-operation">Accessor Endpoint For DollarToTl Operation</a></li>
+      </ul>
+    </li>
+    <li><a href="#third-project">Third Projects Information</a></li>
+  </ol>
+</details>
+
 ## Description
 
 ---
@@ -9,12 +37,12 @@
 - The design of the project was made in accordance with the UML diagram.
 - Swagger was used to perform Get, Post, Put and Delete mapping operations.
 
-## School Management System UML Diagram
+### School Management System Uml Diagram
 
 ---
 ![ThirdHomework](SchoolManagementSystem/src/main/java/images/ThirdHomework.jpg)
 
-## Mapping Operations on Swagger
+## Mapping Operations On Swagger
 
 ---
 ### Mapping Operations On The Student
